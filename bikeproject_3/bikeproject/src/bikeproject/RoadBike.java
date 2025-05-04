@@ -1,6 +1,6 @@
 package bikeproject;
 
-public class RoadBike extends Bike{
+public class RoadBike extends Bike implements RoadParts{
 	
 	private int  tyreWidth, postHeight;
 	
@@ -26,4 +26,34 @@ public class RoadBike extends Bike{
 		super.printDescription();
 		System.out.println("This Roadbike bike has " + this.tyreWidth + "mm tyres and a post height of " + this.postHeight + ".");
 	}//end method printDescription
+
+	// Implementing methods from RoadParts interface
+	@Override
+	public String getTyreWidth() {
+		return Integer.toString(this.tyreWidth);
+	}//end method getTyreWidth
+
+	@Override
+	public void setTyreWidth(String newValue) {
+		try {
+			this.tyreWidth = Integer.parseInt(newValue);
+		} catch (NumberFormatException e) {
+			System.out.println("Error: Tyre width must be a valid integer.");
+		}
+	}//end method setTyreWidth
+
+	@Override
+	public String getPostHeight() {
+		return Integer.toString(this.postHeight);
+	}//end method getPostHeight
+
+	@Override
+	public void setPostHeight(String newValue) {
+		try {
+			this.postHeight = Integer.parseInt(newValue);
+		} catch (NumberFormatException e) {
+			System.out.println("Error: Post height must be a valid integer.");
+		}
+	}//end method setPostHeight
+
 }//end class RoadBike
