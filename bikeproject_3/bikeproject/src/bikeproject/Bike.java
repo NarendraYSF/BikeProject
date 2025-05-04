@@ -1,6 +1,6 @@
 package bikeproject;
 
-public class Bike {
+public class Bike implements BikeParts {
 
 	private String handleBars, frame, tyres, seatType;
 	private int NumGears;
@@ -27,7 +27,36 @@ public class Bike {
 				          + "\nIt has a " + this.seatType + " seat with " + this.tyres + " tyres.");
 	}//end method printDescription
 
-}//end class Bike
-	
-	
+	// Implementing methods from BikeParts interface
+	@Override
+	public String getHandleBars() {
+		return this.handleBars;
+	}//end method getHandleBars
 
+	@Override
+	public void setHandleBars(String newValue) {
+		this.handleBars = newValue;
+	}//end method setHandleBars
+
+	@Override
+	public String getTyres() {
+		return this.tyres;
+	}//end method getTyres
+
+	@Override
+	public void setTyres(String newValue) {
+		this.tyres = newValue;
+	}//end method setTyres
+
+	@Override
+	public String getSeatType() {
+		return this.seatType;
+	}//end method getSeatType
+
+	@Override
+	public void setSeatType(String newValue) {
+		this.seatType = newValue;
+	}//end method setSeatType
+
+}//end class Bike
+\
