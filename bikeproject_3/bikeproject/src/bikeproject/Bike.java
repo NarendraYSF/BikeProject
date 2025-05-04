@@ -59,4 +59,3 @@ public class Bike implements BikeParts {
 	}//end method setSeatType
 
 }//end class Bike
-\
